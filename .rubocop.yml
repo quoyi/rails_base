@@ -1,0 +1,23 @@
+AllCops:
+  NewCops: disable
+  Exclude:
+    - 'spec/dummy/**/*'
+
+Gemspec/OrderedDependencies:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/MutableConstant:
+  Enabled: false
+
+Style/SpecialGlobalVars:
+  Exclude:
+    - 'rails_base.gemspec'

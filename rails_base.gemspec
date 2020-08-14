@@ -1,31 +1,25 @@
-$:.push File.expand_path("lib", __dir__)
+$:.push File.expand_path('lib', __dir__)
 
-# Maintain your gem's version:
-require "rails_base/version"
+require 'rails_base/version'
 
-# Describe your gem and declare its dependencies:
 Gem::Specification.new do |spec|
-  spec.name        = "rails_base"
-  spec.version     = RailsBase::VERSION
-  spec.authors     = ["Quo yi"]
-  spec.email       = ["beitaz@icloud.com"]
-  spec.homepage    = "TODO"
-  spec.summary     = "TODO: Summary of RailsBase."
-  spec.description = "TODO: Description of RailsBase."
-  spec.license     = "MIT"
+  spec.name                  = 'rails_base'
+  spec.version               = RailsBase::VERSION
+  spec.authors               = ['Quo yi']
+  spec.email                 = ['beitaz@icloud.com']
+  spec.homepage              = 'https://github.com/quoyi/rails_base'
+  spec.summary               = '提供用户注册认证、角色管理、组织管理等基础功能。'
+  spec.description           = 'Rails 应用基础功能引擎。'
+  spec.license               = 'LGPL-3.0'
+  spec.required_ruby_version = '>= 2.6.5'
 
-  # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
-  # to allow pushing to a single host or delete this section to allow pushing to any host.
-  if spec.respond_to?(:metadata)
-    spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
-  else
-    raise "RubyGems 2.0 or newer is required to protect against " \
-      "public gem pushes."
-  end
+  spec.files = Dir['{app,config,db,lib}/**/*', 'LICENSE', 'Rakefile', 'README.md']
 
-  spec.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
+  spec.add_dependency 'bcrypt', '~> 3.1.7'
+  spec.add_dependency 'rails', '~> 6.0.3', '>= 6.0.3.2'
 
-  spec.add_dependency "rails", "~> 6.0.3", ">= 6.0.3.2"
-
-  spec.add_development_dependency "sqlite3"
+  spec.add_development_dependency 'rubocop'
+  spec.add_development_dependency 'sqlite3'
+  spec.add_development_dependency 'rspec-rails'
+  spec.add_development_dependency 'factory_bot_rails'
 end
