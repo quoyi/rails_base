@@ -1,3 +1,5 @@
+require 'factory_bot_rails'
+
 module RailsBase
   class Engine < ::Rails::Engine
     isolate_namespace RailsBase
@@ -16,5 +18,7 @@ module RailsBase
 
       # g.templates.prepend File.expand_path('lib/templates', RailsBase::Engine.root)
     end
+
+    config.factory_bot.definition_file_paths += [File.expand_path('factories', __dir__)] if defined?(FactoryBotRails)
   end
 end
